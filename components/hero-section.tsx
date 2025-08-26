@@ -39,6 +39,9 @@ export function HeroSection() {
               Ver Mis Proyectos
             </Button>
             <Button
+            onClick={() => {
+              window.open('/cv_Franco_Pagano.pdf', '_blank');
+            }}
               variant="outline"
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 bg-transparent"
