@@ -51,7 +51,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">contacto@ejemplo.com</p>
+                    <p className="text-muted-foreground">franco.pagano66@gmail.com</p>
                   </div>
                 </div>
 
@@ -61,7 +61,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium">Teléfono</p>
-                    <p className="text-muted-foreground">+34 123 456 789</p>
+                    <p className="text-muted-foreground">+54 11 2276 2306</p>
                   </div>
                 </div>
 
@@ -71,7 +71,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium">Ubicación</p>
-                    <p className="text-muted-foreground">Madrid, España</p>
+                    <p className="text-muted-foreground">Buenos Aires, Argentina</p>
                   </div>
                 </div>
               </div>

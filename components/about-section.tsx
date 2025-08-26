@@ -11,17 +11,18 @@ export function AboutSection() {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed font-serif">
-                Soy un desarrollador full stack apasionado por crear soluciones digitales innovadoras. Con más de 3 años
-                de experiencia, me especializo en tecnologías modernas como React, Next.js, Node.js y bases de datos
-                tanto SQL como NoSQL.
+                Desarrollador Full-Stack con más de 3 años de experiencia en el desarrollo de aplicaciones web escalables para 
+                organismos públicos y empresas privadas. He participado en proyectos de gran impacto como plataformas educativas 
+                y marketplaces de e-commerce, trabajando con tecnologías como React.js, Next.js, Node.js, Java y SQL.
               </p>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed font-serif">
-                Mi enfoque se centra en escribir código limpio, escalable y mantenible, siempre buscando las mejores
-                prácticas y las últimas tendencias en desarrollo web.
+                Mi especialidad está en la implementación de arquitecturas robustas, el diseño de interfaces responsivas y la 
+                optimización de procesos mediante buenas prácticas de desarrollo. Me enfoco en aportar valor al negocio a través 
+                de soluciones eficientes, manteniendo un código limpio y escalable.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed font-serif">
-                Cuando no estoy programando, disfruto aprendiendo nuevas tecnologías, contribuyendo a proyectos open
-                source y compartiendo conocimientos con la comunidad de desarrolladores.
+                Colaboro activamente en equipos multidisciplinarios bajo metodologías ágiles, integrando calidad técnica con 
+                objetivos estratégicos. Busco seguir creciendo profesionalmente en entornos desafiantes e innovadores.
               </p>
             </div>
             <div className="flex justify-center">

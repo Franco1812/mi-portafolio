@@ -20,10 +20,10 @@ export function HeroSection() {
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
             <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-accent overflow-hidden">
-              <img src="/professional-developer-portrait.png" alt="Foto de perfil" className="w-full h-full object-cover" />
+              <img src="/PerfilPhoto.jpeg" alt="Foto de perfil" className="w-full h-full object-cover" />
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Hola, soy Alex Desarrollador
+              Hola, soy Franco!
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-serif">
               Desarrollador Full Stack especializado en crear experiencias web excepcionales
@@ -49,7 +49,7 @@ export function HeroSection() {
 
           <div className="flex justify-center space-x-6 mb-12">
             <a
-              href="https://github.com"
+              href="https://github.com/Franco1812"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -57,7 +57,7 @@ export function HeroSection() {
               <Github className="h-6 w-6" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/franco-pagano66/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -65,7 +65,7 @@ export function HeroSection() {
               <Linkedin className="h-6 w-6" />
             </a>
             <a
-              href="mailto:contacto@ejemplo.com"
+              href="mailto:franco.pagano66@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail className="h-6 w-6" />
