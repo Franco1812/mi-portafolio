@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, X } from "lucide-react"
 import emailjs from '@emailjs/browser'
 
 export function ContactSection() {
@@ -15,21 +15,42 @@ export function ContactSection() {
     email: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [notification, setNotification] = useState<{
+    show: boolean
+    type: 'success' | 'error'
+    message: string
+  }>({ show: false, type: 'success', message: '' })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const SERVICE_ID = "service_ivsjoga"
-    const TEMPLATE_ID = "template_lw4kbdh"
-    const USER_ID = "ICY_hiJFWuEK5Otaa"
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID)
-      .then(() => {
-        alert("Correo enviado correctamente!")
-        setFormData({ name: "", email: "", message: "" })
+    setIsSubmitting(true)
+    
+    const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string
+    const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string
+    const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
+    
+    try {
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID)
+      setNotification({
+        show: true,
+        type: 'success',
+        message: '¡Mensaje enviado! Gracias por contactarme. Te responderé pronto.'
       })
-      .catch((err) => {
-        console.error(err)
-        alert("Hubo un error al enviar el correo")
+      setFormData({ name: "", email: "", message: "" })
+    } catch (err) {
+      console.error(err)
+      setNotification({
+        show: true,
+        type: 'error',
+        message: 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.'
       })
+    } finally {
+      setIsSubmitting(false)
+      setTimeout(() => {
+        setNotification({ show: false, type: 'success', message: '' })
+      }, 5000)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -41,6 +62,31 @@ export function ContactSection() {
 
   return (
     <section id="contacto" className="py-20">
+      {notification.show && (
+        <div className={`fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg max-w-sm transition-all duration-300 ${
+          notification.type === 'success' 
+            ? 'bg-gray-900 text-white border border-gray-700' 
+            : 'bg-red-500 text-white'
+        }`}>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              {notification.type === 'success' ? (
+                <CheckCircle className="h-5 w-5" />
+              ) : (
+                <AlertCircle className="h-5 w-5" />
+              )}
+              <p className="text-sm font-medium">{notification.message}</p>
+            </div>
+            <button
+              onClick={() => setNotification({ show: false, type: 'success', message: '' })}
+              className="ml-2 hover:opacity-70"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      )}
+      
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Contacto</h2>
@@ -124,9 +170,18 @@ export function ContactSection() {
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full">
-                    <Send className="h-4 w-4 mr-2" />
-                    Enviar Mensaje
+                  <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? (
+                      <>
+                        <div className="h-4 w-4 mr-2 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent" />
+                        Enviando...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-4 w-4 mr-2" />
+                        Enviar Mensaje
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>
