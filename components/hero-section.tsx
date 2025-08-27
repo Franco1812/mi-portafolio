@@ -40,7 +40,7 @@ export function HeroSection() {
             </Button>
             <Button
             onClick={() => {
-              window.open('/cv_Franco_Pagano.pdf', '_blank');
+              window.open('/cv-franco-pagano.pdf', '_blank');
             }}
               variant="outline"
               size="lg"
