@@ -1,13 +1,13 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
+import emailjs from '@emailjs/browser'
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -18,10 +18,18 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Aquí iría la lógica para enviar el formulario
-    console.log("Formulario enviado:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", message: "" })
+    const SERVICE_ID = "service_ivsjoga"
+    const TEMPLATE_ID = "template_lw4kbdh"
+    const USER_ID = "ICY_hiJFWuEK5Otaa"
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID)
+      .then(() => {
+        alert("Correo enviado correctamente!")
+        setFormData({ name: "", email: "", message: "" })
+      })
+      .catch((err) => {
+        console.error(err)
+        alert("Hubo un error al enviar el correo")
+      })
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -79,10 +87,10 @@ export function ContactSection() {
               <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-6 rounded-lg">
                 <h4 className="font-semibold mb-2">¿Por qué trabajar conmigo?</h4>
                 <ul className="text-sm text-muted-foreground space-y-1 font-serif">
-                  <li>• Comunicación clara y constante</li>
-                  <li>• Entrega puntual de proyectos</li>
-                  <li>• Código limpio y documentado</li>
-                  <li>• Soporte post-lanzamiento</li>
+                  <li>• Metodologías ágiles y gestión de proyectos: Experiencia en entornos corporativos siguiendo Scrum/Kanban para asegurar entregas eficientes.</li>
+                  <li>• Calidad de código y buenas prácticas: Desarrollo de software con código limpio, modular y bien documentado, facilitando mantenibilidad y escalabilidad.</li>
+                  <li>• Entrega puntual y cumplimiento de objetivos: Historial comprobado de finalización de proyectos dentro de plazos establecidos.</li>
+                  <li>• Capacidad para implementar mejoras, solucionar bugs y optimizar aplicaciones después de su despliegue.</li>
                 </ul>
               </div>
             </div>

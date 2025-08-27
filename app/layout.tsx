@@ -16,9 +16,12 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: "Mi Portafolio | Desarrollador Full Stack",
-  description: "Portafolio personal de desarrollador full stack especializado en React, Next.js y tecnologías modernas",
+  title: "Franco.dev",
+  description: "Portafolio personal",
   generator: "v0.app",
+  icons: {
+    icon: "/lightning.svg",
+  },
 }
 
 export default function RootLayout({

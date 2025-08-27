@@ -38,7 +38,10 @@ export function PortfolioHeader() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="font-bold text-xl text-primary">Mi Portafolio</div>
+        <div className="font-bold text-xl text-primary flex items-center gap-2">
+          Franco.dev
+          <img src="/react-logo.svg" alt="React" className="w-7 h-7" />
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
@@ -54,12 +57,12 @@ export function PortfolioHeader() {
           >
             Sobre Mí
           </button>
-          <button
+          {/* <button
             onClick={() => scrollToSection("proyectos")}
             className="text-foreground hover:text-primary transition-colors"
           >
             Proyectos
-          </button>
+          </button> */}
           <button
             onClick={() => scrollToSection("habilidades")}
             className="text-foreground hover:text-primary transition-colors"
@@ -107,12 +110,12 @@ export function PortfolioHeader() {
             >
               Sobre Mí
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection("proyectos")}
               className="text-left text-foreground hover:text-primary transition-colors"
             >
               Proyectos
-            </button>
+            </button> */}
             <button
               onClick={() => scrollToSection("habilidades")}
               className="text-left text-foreground hover:text-primary transition-colors"
