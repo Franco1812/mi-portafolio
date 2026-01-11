@@ -26,7 +26,7 @@ export function HeroSection() {
               Hola, soy Franco!
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-serif">
-              Software Developer especializado en el diseño e implementación de aplicaciones web escalables y de alto rendimiento.
+              Full Stack Developer SSR especializado en el soporte, mantenimiento y optimización de sistemas críticos y plataformas de alto tráfico.
             </p>
           </div>
 

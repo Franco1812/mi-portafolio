@@ -11,18 +11,19 @@ export function AboutSection() {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed font-serif">
-                Desarrollador Full-Stack con más de 3 años de experiencia en el desarrollo de aplicaciones web escalables para 
-                organismos públicos y empresas privadas. He participado en proyectos de gran impacto como plataformas educativas 
-                y marketplaces de e-commerce, trabajando con tecnologías como React.js, Next.js, Node.js, Java y SQL.
+                Desarrollador Full-Stack con más de 3 años de experiencia y sólido seniority SSR. Especializado en el soporte, 
+                mantenimiento y optimización de sistemas críticos y plataformas de alto tráfico. Experto en diagnóstico de 
+                incidencias, integridad de flujos operativos y desarrollo moderno con PHP (Laravel), JavaScript/TypeScript 
+                (React, Node, NestJS) y Java (Spring Boot).
               </p>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed font-serif">
-                Mi especialidad está en la implementación de arquitecturas robustas, el diseño de interfaces responsivas y la 
-                optimización de procesos mediante buenas prácticas de desarrollo. Me enfoco en aportar valor al negocio a través 
-                de soluciones eficientes, manteniendo un código limpio y escalable.
+                He trabajado en proyectos de gran impacto como el sistema nacional de trazabilidad para muestras de laboratorio 
+                en el Instituto Dr. Carlos Malbrán, plataformas educativas para más de 200.000 alumnos y 50.000 docentes del 
+                GCBA, y marketplaces de e-commerce con expansión regional.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed font-serif">
-                Colaboro activamente en equipos multidisciplinarios bajo metodologías ágiles, integrando calidad técnica con 
-                objetivos estratégicos. Busco seguir creciendo profesionalmente en entornos desafiantes e innovadores.
+                Mi enfoque está en asegurar la continuidad operativa, resolver incidencias técnicas críticas y ejecutar mejoras 
+                funcionales que aporten valor real al negocio, manteniendo siempre un código limpio, modular y escalable.
               </p>
             </div>
             <div className="flex justify-center">

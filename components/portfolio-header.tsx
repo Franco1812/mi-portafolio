@@ -64,6 +64,18 @@ export function PortfolioHeader() {
             Proyectos
           </button> */}
           <button
+            onClick={() => scrollToSection("experiencia")}
+            className="text-foreground hover:text-primary transition-colors"
+          >
+            Experiencia
+          </button>
+          <button
+            onClick={() => scrollToSection("educacion")}
+            className="text-foreground hover:text-primary transition-colors"
+          >
+            Educación
+          </button>
+          <button
             onClick={() => scrollToSection("habilidades")}
             className="text-foreground hover:text-primary transition-colors"
           >
@@ -116,6 +128,18 @@ export function PortfolioHeader() {
             >
               Proyectos
             </button> */}
+            <button
+              onClick={() => scrollToSection("experiencia")}
+              className="text-left text-foreground hover:text-primary transition-colors"
+            >
+              Experiencia
+            </button>
+            <button
+              onClick={() => scrollToSection("educacion")}
+              className="text-left text-foreground hover:text-primary transition-colors"
+            >
+              Educación
+            </button>
             <button
               onClick={() => scrollToSection("habilidades")}
               className="text-left text-foreground hover:text-primary transition-colors"

@@ -4,20 +4,20 @@ import { TechIcon } from "./tech-icons"
 
 const skillCategories = [
   {
-    title: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js", "Sass", "Webpack", "Vite"],
+    title: "Lenguajes",
+    skills: ["JavaScript", "TypeScript", "PHP", "Java", "SQL", "C++"],
   },
   {
-    title: "Backend",
-    skills: ["Node.js", "Express", "Python", "Django", "PostgreSQL", "MongoDB", "Redis", "GraphQL"],
+    title: "Frameworks",
+    skills: ["Laravel", "React.js", "Next.js", "NestJS", "Node.js", "Spring Boot"],
   },
   {
-    title: "DevOps & Tools",
-    skills: ["Docker", "AWS", "Vercel", "Git", "GitHub Actions", "Jest", "Cypress", "Figma"],
+    title: "Herramientas",
+    skills: ["Docker", "Git", "GitHub", "Linux", "RESTful APIs", "GraphQL"],
   },
   {
-    title: "Móvil",
-    skills: ["React Native", "Expo", "Flutter", "PWA", "Responsive Design", "Mobile-First"],
+    title: "Bases de Datos",
+    skills: ["MySQL", "MariaDB", "PostgreSQL"],
   },
 ]
 
