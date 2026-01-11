@@ -1,39 +1,46 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, Building2, Briefcase } from "lucide-react"
+import { Calendar, Building2, Briefcase, MapPin, ExternalLink } from "lucide-react"
 
 const experiences = [
   {
     company: "IT ANLIS (Instituto Dr. Carlos Malbrán)",
     position: "Software Developer SSR",
-    period: "Noviembre 2025 – Actualidad",
+    period: "Noviembre 2025 – Actualidad · 3 meses",
+    location: "Ciudad Autónoma de Buenos Aires · Presencial",
+    website: "https://trazabilidad.anlis.gob.ar/",
     responsibilities: [
-      "Gestión integral del soporte y mantenimiento evolutivo del sistema nacional de trazabilidad para muestras de laboratorio.",
-      "Resolución de incidencias técnicas críticas y ejecución de mejoras funcionales para asegurar la continuidad operativa.",
-      "Análisis de datos y aseguramiento de la integridad del flujo de información en entornos estatales.",
+      "Brindo soporte y mantenimiento a un sistema de trazabilidad utilizado dentro del Instituto Dr. Carlos Malbrán, orientado a la gestión y seguimiento de paquetes de muestras para estudios de laboratorio.",
+      "Trabajo sobre la plataforma realizando diagnóstico y resolución de incidencias, mejoras funcionales, análisis de datos y aseguramiento de la integridad del flujo operativo.",
     ],
-    technologies: ["PHP", "Laravel", "React", "MySQL", "MariaDB"],
+    technologies: ["PHP", "Laravel", "JavaScript", "MySQL", "MariaDB"],
   },
   {
     company: "Phinx Lab",
     position: "Full-stack Developer",
     period: "Noviembre 2024 – Octubre 2025",
     responsibilities: [
+      "Me desempeñé como desarrollador Full-Stack, construyendo aplicaciones web escalables utilizando React.js en el frontend y Node.js en el backend.",
+      "Mis responsabilidades incluyeron la implementación de nuevas funcionalidades, el mantenimiento de la calidad del código, la integración de APIs y la entrega de experiencias de usuario fluidas.",
+      "Participé activamente en metodologías ágiles, colaborando en reuniones de planificación y revisiones de código para garantizar la mejora continua y la alineación con los objetivos del proyecto.",
       "Proyecto Aprende BA: Desarrollo de plataforma educativa para +200.000 alumnos y 50.000 docentes del GCBA.",
       "Proyecto PipeStore: Desarrollo de marketplace e-commerce con expansión regional.",
-      "Implementación de aplicaciones web escalables utilizando React.js y Node.js.",
     ],
     technologies: ["TypeScript", "Node.js", "Java", "SQL", "Docker"],
   },
   {
     company: "Developfit",
     position: "Developer",
-    period: "Febrero 2023 – Noviembre 2024",
+    period: "Febrero 2023 – Noviembre 2024 · 1 año 10 meses",
+    location: "Provincia de Buenos Aires, Argentina · Híbrido",
     responsibilities: [
-      "Diseño de arquitecturas frontend y desarrollo de interfaces responsivas con React.js.",
-      "Implementación de servicios RESTful y lógica de negocio con Java Spring Boot.",
+      "Desarrollo de interfaces de usuario modernas y responsivas utilizando React.js.",
+      "Implementación de lógica de negocio y servicios RESTful en el backend con Java Spring Boot.",
+      "Diseño y mantenimiento de bases de datos relacionales con MySQL.",
+      "Participación en múltiples proyectos, aplicando buenas prácticas de desarrollo y control de versiones con GitHub.",
+      "Enfoque en la eficiencia técnica y la calidad del código en todo el ciclo de desarrollo.",
     ],
-    technologies: ["React.js", "Java", "MySQL", "Docker", "Metodologías Ágiles"],
+    technologies: ["React.js", "Java", "MySQL", "Docker", "GitHub", "Spring Boot"],
   },
 ]
 
@@ -65,6 +72,12 @@ export function ExperienceSection() {
                         <Calendar className="h-4 w-4" />
                         <span className="text-sm">{exp.period}</span>
                       </div>
+                      {exp.location && (
+                        <div className="flex items-center gap-2 text-muted-foreground mt-2">
+                          <MapPin className="h-4 w-4" />
+                          <span className="text-sm">{exp.location}</span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </CardHeader>
@@ -77,6 +90,19 @@ export function ExperienceSection() {
                       </li>
                     ))}
                   </ul>
+                  {exp.website && (
+                    <div className="mb-4">
+                      <a
+                        href={exp.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 flex items-center gap-2 text-sm font-medium transition-colors"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Ver sitio web
+                      </a>
+                    </div>
+                  )}
                   <div className="flex flex-wrap gap-2 mt-4">
                     <span className="text-sm font-semibold text-muted-foreground mr-2">Tecnologías:</span>
                     {exp.technologies.map((tech, techIndex) => (
